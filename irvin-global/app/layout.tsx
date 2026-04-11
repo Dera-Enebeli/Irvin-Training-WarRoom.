@@ -16,9 +16,12 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Irvin Global & Investment Group | 10 Years of Financial Excellence',
-  description: 'Providing Secure Investment, SME Financing, and Asset Management for over 5,000 clients across Nigeria.',
-  keywords: 'investment, SME financing, asset management, payroll lending, Nigeria finance',
+  title: 'Irvin Global & Investment Group | Financial Services Company, Loans and Lending',
+  description: 'Providing Secure Loans, Asset Financing, SME Loans, and Payroll Lending services across Nigeria. CAC Registered, established 2016.',
+  keywords: 'loans, lending, payday loans, payroll loans, SME loans, asset financing, Nigeria finance, financial services Abuja',
+  icons: {
+    icon: 'https://www.irvinglobalgroup.com/wp-content/uploads/2023/05/IRVIN.logo_.png',
+  },
 }
 
 export default function RootLayout({

@@ -158,9 +158,11 @@ export default function InquiryModal({ isOpen, onClose }: InquiryModalProps) {
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-gold focus:border-gold transition-colors bg-white"
                     >
                       <option value="">Select a service</option>
-                      <option value="investment">Investment Management</option>
-                      <option value="sme">SME & Contract Finance</option>
-                      <option value="payroll">Payroll Lending</option>
+                      <option value="payday">Payday Loan</option>
+                      <option value="payroll">Payroll Loan</option>
+                      <option value="stepup">Step-Up Loan</option>
+                      <option value="sme">SME Loan</option>
+                      <option value="asset">Asset Financing</option>
                     </select>
                   </div>
                   <div>
