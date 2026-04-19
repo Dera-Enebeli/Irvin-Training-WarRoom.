@@ -147,7 +147,7 @@ export default function PricingPage() {
         </div>
 
         {/* Navigation */}
-        <div className="mt-8 flex justify-between">
+        <div className="mt-8 flex flex-col md:flex-row justify-between gap-3">
           <Link
             href="/legal-pitch/closing"
             className="flex items-center gap-2 text-slate-400 hover:text-white"

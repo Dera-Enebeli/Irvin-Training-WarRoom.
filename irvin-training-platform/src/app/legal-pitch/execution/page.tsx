@@ -426,18 +426,18 @@ export default function ExecutionPage() {
         )}
 
         {/* Navigation */}
-        <div className="mt-8 flex justify-between">
-          <div className="flex gap-4">
+        <div className="mt-8 flex flex-col md:flex-row justify-between gap-3">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-4">
             <Link
               href="/war-room"
-              className="flex items-center gap-2 text-amber-400 hover:text-amber-300"
+              className="flex items-center gap-2 text-sm text-amber-400 hover:text-amber-300"
             >
               <ArrowRight className="w-4 h-4 rotate-180" />
               Quick Reference
             </Link>
             <Link
               href="/legal-pitch/pricing"
-              className="flex items-center gap-2 text-slate-400 hover:text-white"
+              className="flex items-center gap-2 text-sm text-slate-400 hover:text-white"
             >
               <ArrowRight className="w-4 h-4 rotate-180" />
               Back to Pricing
@@ -445,7 +445,7 @@ export default function ExecutionPage() {
           </div>
           <Link
             href="/legal-pitch/closing"
-            className="flex items-center gap-2 text-purple-400 hover:text-purple-300"
+            className="flex items-center gap-2 text-sm text-purple-400 hover:text-purple-300"
           >
             Next: Closing
             <ArrowRight className="w-4 h-4" />

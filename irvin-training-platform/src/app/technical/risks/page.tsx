@@ -97,7 +97,7 @@ export default function RisksPage() {
         </div>
 
         {/* Navigation */}
-        <div className="mt-8 flex justify-between">
+        <div className="mt-8 flex flex-col md:flex-row justify-between gap-3">
           <Link
             href="/technical/real-cases"
             className="flex items-center gap-2 text-slate-400 hover:text-white"

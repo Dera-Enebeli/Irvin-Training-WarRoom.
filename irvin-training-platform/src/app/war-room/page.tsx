@@ -129,25 +129,25 @@ export default function WarRoomPage() {
         </div>
 
         {/* Navigation */}
-        <div className="mt-8 flex justify-between">
+        <div className="mt-8 flex flex-col md:flex-row justify-between gap-3">
           <Link
             href="/legal-pitch/closing"
-            className="flex items-center gap-2 text-slate-400 hover:text-white"
+            className="flex items-center gap-2 text-sm text-slate-400 hover:text-white"
           >
             <ChevronRight className="w-4 h-4 rotate-180" />
             Back to Closing
           </Link>
-          <div className="flex gap-4">
+          <div className="flex flex-col md:flex-row gap-2 md:gap-4">
             <Link
               href="/legal-pitch/execution"
-              className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300"
+              className="flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300"
             >
               Detailed Scripts
               <ChevronRight className="w-4 h-4" />
             </Link>
             <Link
               href="/technical"
-              className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300"
+              className="flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300"
             >
               Start Technical Track
               <ChevronRight className="w-4 h-4" />
