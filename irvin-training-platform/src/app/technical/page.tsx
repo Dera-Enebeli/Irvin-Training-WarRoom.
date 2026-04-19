@@ -82,7 +82,7 @@ export default function TechnicalPage() {
           {technicalChecklist.map((item, index) => (
             <Link
               key={item.id}
-              href={`/technical/${item.id === 'wp-version' ? 'wp-vulnerabilities' : item.id === 'referer-leak' ? 'headers-analysis' : item.id === 'document-findings' ? 'documentation' : item.id}`}
+              href={`/technical/${item.id === 'wp-version' ? 'wp-vulnerabilities' : item.id === 'referer-leak' ? 'headers-analysis' : item.id === 'document-findings' ? 'documentation' : item.id === 'schema-fetch' ? 'devtools' : item.id === 'api-enumeration' ? 'wp-vulnerabilities' : item.id === 'form-exposure' ? 'wp-vulnerabilities' : item.id}`}
               className="block"
             >
               <div className="bg-slate-800 rounded-xl p-5 border border-slate-700 hover:border-cyan-500 transition-all group">
