@@ -31,7 +31,7 @@ const legalLinks = [
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [techOpen, setTechOpen] = useState(false);
+  const [techOpen, setTechOpen] = useState(true);
   const [legalOpen, setLegalOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
@@ -206,33 +206,64 @@ export default function Navbar() {
         {/* Mobile Navigation */}
         {mobileOpen && (
           <div className="md:hidden pb-4 border-t border-slate-700 pt-4 max-h-[80vh] overflow-y-auto">
-            <div className="space-y-1">
-              <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider px-3 mb-2">
-                Technical (You)
+            {/* Mobile Tab Switcher */}
+            <div className="flex mb-4 rounded-lg overflow-hidden">
+              <button
+                onClick={() => { setTechOpen(!techOpen); setLegalOpen(false); }}
+                className={`flex-1 py-3 text-sm font-medium text-center transition-colors ${
+                  techOpen ? "bg-cyan-600 text-white" : "bg-slate-800 text-slate-300"
+                }`}
+              >
+                Technical
+              </button>
+              <button
+                onClick={() => { setLegalOpen(!legalOpen); setTechOpen(false); }}
+                className={`flex-1 py-3 text-sm font-medium text-center transition-colors ${
+                  legalOpen ? "bg-purple-600 text-white" : "bg-slate-800 text-slate-300"
+                }`}
+              >
+                Legal & Pitch
+              </button>
+            </div>
+
+            {techOpen && (
+              <div className="space-y-1 animate-fade-in">
+                <div className="text-xs font-semibold text-cyan-400 uppercase tracking-wider px-3 mb-2">
+                  Technical (You)
+                </div>
+                {technicalLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="block px-3 py-3 min-h-[44px] text-slate-300 hover:bg-slate-800 hover:text-white rounded-md"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
-              {technicalLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-3 py-3 min-h-[44px] text-slate-300 hover:bg-slate-800 hover:text-white rounded-md"
-                >
-                  {link.label}
-                </Link>
-              ))}
-              <div className="text-xs font-semibold text-slate-500 uppercase tracking-wider px-3 mt-4 mb-2">
-                Legal & Pitch (Partner)
+            )}
+
+            {legalOpen && (
+              <div className="space-y-1 animate-fade-in">
+                <div className="text-xs font-semibold text-purple-400 uppercase tracking-wider px-3 mb-2">
+                  Legal & Pitch (Partner)
+                </div>
+                {legalLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="block px-3 py-3 min-h-[44px] text-slate-300 hover:bg-slate-800 hover:text-white rounded-md"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
               </div>
-              {legalLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-3 py-3 min-h-[44px] text-slate-300 hover:bg-slate-800 hover:text-white rounded-md"
-                >
-                  {link.label}
-                </Link>
-              ))}
+            )}
+
+            {/* Always visible links */}
+            <div className="mt-4 pt-4 border-t border-slate-700">
               <Link
                 href="/war-room"
                 onClick={() => setMobileOpen(false)}
