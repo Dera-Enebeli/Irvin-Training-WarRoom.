@@ -201,7 +201,7 @@ export default function PDFVerifierPage() {
                   <span>Article {selectedArticle} - {articleContent[selectedArticle]?.title || articles.find(a => a.num === selectedArticle)?.title}</span>
                 </div>
                 <div className="bg-slate-700/50 rounded-lg p-4 space-y-3">
-                  {articleContent[selectedArticle]?.content.map((line, idx) => (
+                  {articleContent[selectedArticle]?.content?.map((line, idx) => (
                     <p key={idx} className="text-slate-300 text-sm">{line}</p>
                   )) || (
                     <p className="text-slate-400 text-sm">Click an article in the sidebar to view its content here. Key articles (7, 19, 20, 24, 28, 34) have full content extracted from the PDF.</p>
