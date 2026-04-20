@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import { ProgressProvider } from "@/components/ProgressContext";
+import ProgressBar from "@/components/ProgressBar";
+import PageTracker from "@/components/PageTracker";
 
 export const metadata: Metadata = {
   title: "Irvin Security Training Platform",
@@ -15,10 +18,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="font-sans overflow-x-hidden">
-        <Navbar />
-        <div className="min-h-screen pt-16">
-          {children}
-        </div>
+        <ProgressProvider>
+          <Navbar />
+          <div className="min-h-screen pt-16 pb-12">
+            {children}
+          </div>
+          <ProgressBar />
+          <PageTracker />
+        </ProgressProvider>
       </body>
     </html>
   );
