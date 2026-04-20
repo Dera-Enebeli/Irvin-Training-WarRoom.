@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ChevronRight, AlertTriangle, Key } from "lucide-react";
+import { ArrowRight, ChevronRight, AlertTriangle, Key, Shield } from "lucide-react";
 import { wpVulnerabilities } from "@/lib/data";
 
 export default function WPVulnerabilitiesPage() {
@@ -17,6 +17,34 @@ export default function WPVulnerabilitiesPage() {
           </div>
           <h1 className="text-2xl md:text-3xl font-bold text-white mb-2">WordPress Vulnerabilities</h1>
           <p className="text-slate-400">Common security issues found on WordPress financial sites</p>
+        </div>
+
+        {/* Reactive vs Proactive */}
+        <div className="bg-gradient-to-r from-red-900/30 to-amber-900/30 border border-red-600/50 rounded-xl p-6 mb-8">
+          <h2 className="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+            <Shield className="w-5 h-5 text-red-400" />
+            Reactive vs Proactive Security
+          </h2>
+          <div className="space-y-4">
+            <p className="text-slate-300">
+              <span className="text-white font-semibold">During the audit, we caught them mid-coverup:</span>
+            </p>
+            <div className="bg-slate-800 rounded-lg p-4">
+              <p className="text-white font-medium">Screenshot 1: Version numbers visible (?ver=10.1)</p>
+              <p className="text-slate-400 text-sm">Your system shouting its version numbers to the world</p>
+            </div>
+            <div className="bg-slate-800 rounded-lg p-4">
+              <p className="text-white font-medium">Screenshot 2: Version stripped (:2)</p>
+              <p className="text-slate-400 text-sm">Your team hiding the labels - Band-Aid security</p>
+            </div>
+            <div className="bg-cyan-900/30 border border-cyan-600/50 rounded-lg p-4">
+              <p className="text-cyan-400 font-semibold">The Closing Line:</p>
+              <p className="text-white mt-2">This is Reactive Security - chasing symptoms. My Sovereign Engine provides Proactive Security. We eliminate version numbers through Content Hashing. You need a fortress, not a mask.</p>
+            </div>
+            <p className="text-amber-400 text-sm">
+              <span className="font-semibold">Why it works:</span> The version stripping proves they are already cleaning up but doing it wrong. Perfect proof that current setup is a house of cards.
+            </p>
+          </div>
         </div>
 
         {/* Overview */}
