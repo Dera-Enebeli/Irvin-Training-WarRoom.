@@ -657,6 +657,18 @@ export const realCases = [
     source: 'Block Magnates (March 5, 2026)',
     url: 'https://blog.blockmagnates.com/how-i-uncovered-employee-data-on-a-crypto-exchange-via-wordpress-misconfiguration',
     summary: 'A security researcher discovered that CEX.IO, a cryptocurrency exchange (which typically has higher security standards than traditional finance), had the exact same WordPress vulnerability as Irvin Global - an exposed /wp-json/wp/v2/users endpoint. This exposed 19 registered users including their full names and usernames, creating brute force attack risk. This case proves that even security-conscious crypto companies make the same mistakes as Irvin Global.'
+  },
+  {
+    id: 'version-stripping',
+    name: 'Reactive vs Proactive Security',
+    riskLevel: 'High',
+    date: 'April 2026',
+    description: 'Version stripping detected during audit - caught mid-coverup',
+    damage: 'Developers dynamically removing version numbers to hide vulnerabilities',
+    relevance: 'Perfect proof that current team is reactive, not proactive - hiding symptoms not curing disease',
+    source: 'Live Audit (April 2026)',
+    url: 'https://irvin-training-platform.vercel.app/technical/wp-vulnerabilities',
+    summary: 'During the audit, we captured two Network Tab screenshots hours apart. In the first, the site was broadcasting WordPress version numbers in the initiator column. In the second reload, those version numbers had been stripped away. This is the Band-Aid approach to security - hiding symptoms rather than fixing the underlying problem. The site is using modern HTTP/3 protocol to deliver data leaks to third parties while using legacy bloated WordPress for customer experience. This reactive approach means they will always be one step behind hackers.'
   }
 ];
 
@@ -696,6 +708,20 @@ export const additionalVulnerabilities: Vulnerability[] = [
     description: 'Actual JSON data pulled from /wp-json/wp/v2/users endpoint',
     evidence: 'id: 1, name: "irvin"; id: 2, name: "xvbswdwxgeqy"; id: 3, name: "puzqqzdurzay"',
     pitch: "I pulled this data without a password. These admin IDs are now known to anyone who visits your site. Hackers can use these for targeted brute force attacks or social engineering against your staff."
+  },
+  {
+    id: 'version-stripping',
+    title: 'Version Stripping (Band-Aid Security)',
+    description: 'Version numbers dynamically removed from URLs - reactive not proactive',
+    evidence: 'fwduvp.css shows version in one reload, stripped in next - developers hiding version numbers not fixing vulnerabilities',
+    pitch: "They are hiding symptoms, not curing the disease. This reactive approach means they are always one step behind hackers. We provide Proactive Security - eliminating version numbers through Content Hashing, not stripping them from URLs."
+  },
+  {
+    id: 'gtm-architecture',
+    title: 'GTM Direct Data Pipeline',
+    description: 'Google Tag Manager configured as core architecture - not a glitch, a feature',
+    evidence: 'gtm.js loads on every page - direct handshake with Google for data harvesting',
+    pitch: "Every page load triggers a direct check-in with Google Tag Manager. This is not a tracking glitch - it is architectural. They are using modern HTTP/3 for the data leak highway while using legacy WordPress for the customer slow road."
   }
 ];
 
